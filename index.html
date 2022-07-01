@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+class Student {
+    static count(){
+         Student.counter = (Student.counter || 0)+1;
+         return;
+    }
+        constructor(name, age, phoneNumber, marks){
+            Student.count();
+            this.name = name;
+            this.age = age;
+            this.phoneNumber = phoneNumber;
+            this. marks = marks;
+        }
+        check_eligibility(){
+            if(this.marks >= 40){
+                console.log(`${this.name} is Eligible`);
+            }else{
+                console.log(`${this.name} is Not Eligible`);
+            }
+         }
+         setPlacementAge(minPlacementAge){
+                    return (minMarks)=>{
+                        if(this.marks > minMarks && this.age > minPlacementAge){
+                            console.log(`${this.name} is ready for placement`)
+                        }else{
+                            console.log(`${this.name} is not ready for placement`)
+                        }
+                    }
+        }
+}
+let student1 = new Student("Sheethal", 25, "0987656455", 89);
+let student2 = new Student("John", 25, "541254625", 36);
+let student3 = new Student("Deo", 19, "9775214466", 90);
+let student4 = new Student("Nick", 21, "9988764535", 39);
+let student5 = new Student("Sowmya", 22, "9805644546", 90);
+student1.check_eligibility();
+student2.check_eligibility();
+student3.check_eligibility();
+student4.check_eligibility();
+student5.check_eligibility();
+console.log(Student.counter);
+student1.setPlacementAge(25)(89);
+student2.setPlacementAge(25)(36);
+student3.setPlacementAge(18)(35);
+student4.setPlacementAge(21)(39);
+student5.setPlacementAge(22)(90);
+
+    </script>
+    
+</body>
+</html>
